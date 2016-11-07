@@ -1,0 +1,62 @@
+{% extends 'layout/index.html' %}
+{% block title %}
+    登录
+{% endblock %}
+
+{% block content %}
+    <div class="row" style="float: left; width: 95%;height: 50%;margin-top: 8%;">
+        <div class="col-sm-offset-2 col-sm-8">
+            <div class="ui center aligned basic segment">
+                <!--<div class="ui left icon action input">
+                    <i class="search icon"></i>
+                    <input type="text" placeholder="Order #">
+                    <div class="ui blue submit button">搜索</div>
+                </div>-->
+                <h2 class="chinese" style="font-size: 70px;">诗歌</h2>
+                <h4  class='chinese' style="font-size: 25px;margin-top: 15px;">科学与艺术的拼凑体</h4>
+                <div class="ui horizontal divider" style="margin-top: 25px;margin-bottom: 25px;">
+                    <div class="ui buttons">
+                        <button class="ui button">登录</button>
+                        <div class="or"></div>
+                        <button class="ui positive button">注册</button>
+                    </div>
+                </div>
+                <!--<div class="ui teal labeled icon button">Create New Order <i class="add icon"></i> </div>-->
+                <!--<button class="ui basic button"><i class="icon user"></i> Add Friend </button>-->
+                <div style="margin-left: 35%;">
+                    <form class="form-horizontal chinese" style="width: 50%;">
+                        <div class="form-group">
+                            <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="icon user"></i></div>
+                                <input type="text" class="form-control" id="exampleInputAmount" placeholder="用户名">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="icon lock"></i></div>
+                                <input type="text" class="form-control" id="exampleInputAmount" placeholder="密码">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <button style="margin-left: 3%; width: 36%;" class="ui primary button">登录</button><br/>
+                <span class="chinese" style="float: left;margin-left: 34%;"><h6>忘记密码</h6></span>
+                <div class="ui horizontal divider chinese" style="margin-top: 50px;margin-bottom: 25px;width: 50%;margin-left: 26%;">或者</div>
+                <button class="ui circular wechat icon button">
+                    <i class="wechat icon"></i>
+                </button>
+                <button class="ui circular weibo icon button">
+                    <i class="weibo icon"></i>
+                </button>
+                <button class="ui circular qq icon button">
+                    <i class="qq icon"></i>
+                </button>
+                <button class="ui circular google plus icon button">
+                    <i class="google plus icon"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+{% endblock %}

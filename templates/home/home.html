@@ -1,0 +1,75 @@
+{% extends "../layout/index.html" %}
+{% block title %} 首页 {% endblock %}
+
+{% block content %}
+    <div style="float: left;height: 100%;width: 23%; background-image: url(/resource/images/left.jpg)">
+        <h2 class='chinese' style="color: white;position: absolute; margin-left: 60px;bottom: 150px; font-size: 40px;">
+            诗歌</h2>
+        <h4 class='chinese' style="color: white;position: absolute; margin-left: 60px;bottom: 100px; font-size: 20px;">
+            科学与艺术的拼凑体</h4>
+        <h5 class='chinese' style="color: white; position: absolute; margin-left: 60px; bottom: 80px;">
+            但我坦然，欣然。我将大笑，我将歌唱</h5>
+    </div>
+    <div style="float: left;height: 8%; width: 73.5%;">
+        <span><h5 class="chinese selected choose"
+                  style="float: left;margin-left: 40px;margin-top: 17px;font-size: 15px;">诗</h5></span>
+        <span><h5 class="chinese selected"
+                  style="float: left;margin-left: 30px;margin-top: 17px;font-size: 15px;">词</h5></span>
+        <span><h5 class="chinese selected"
+                  style="float: left;margin-left: 30px;margin-top: 17px;font-size: 15px;">小说</h5></span>
+        <span><h5 class="chinese selected" style="float: left;margin-left: 30px;margin-top: 17px;font-size: 15px;">数据结构与算法</h5></span>
+        <span><div class="ui search" style="float: left;margin-left: 23%;width: 25%;margin-top: 14px;font-size: 12px;">
+            <div class="ui icon input">
+                <input class="prompt chinese" type="text" placeholder="感兴趣..">
+                <i class="search icon"></i>
+            </div>
+            <div class="results"></div>
+        </div></span>
+        <span style="float: right;margin-right: 15px; margin-top:17px;font-size: 15px;" class="chinese selected"><i
+                    class="ui user icon"></i>注册</span>
+        <span style="float: right;margin-right: 15px;margin-top:17px;font-size: 15px;" class="chinese selected"><i
+                    class="ui log out icon"></i>登录</span>
+        <div class="ui divider" style="margin-top: 50px;width: 77%;"></div>
+        <div class="ui grid">
+            <span><h5 class="chinese selected choose"
+                      style="float: left;margin-left: 40px; margin-top:10px;font-size: 15px;">先秦</h5></span>
+            <span><h5 class="chinese selected" style="float: left;margin-top:10px;font-size: 15px;">两汉</h5></span>
+            <span><h5 class="chinese selected" style="float: left;margin-top:10px;font-size: 15px;">魏晋</h5></span>
+            <span><h5 class="chinese selected" style="float: left;margin-top:10px;font-size: 15px;">南北朝</h5></span>
+            <span><h5 class="chinese selected" style="float: left;margin-top:10px;font-size: 15px;">隋代</h5></span>
+            <span><h5 class="chinese selected" style="float: left;margin-top:10px;font-size: 15px;">唐</h5></span>
+            <span><h5 class="chinese selected" style="float: left;margin-top:10px;font-size: 15px;">宋</h5></span>
+            <span><h5 class="chinese selected" style="float: left;margin-top:10px;font-size: 15px;">元</h5></span>
+        </div>
+        <div class="ui grid" style="margin-top: 40px;">
+            <div class="ui items" style="margin-left: 40px;">
+                <div class="item">
+                    <div class="content">
+                        <a class="chinese selected _title">将进酒</a>
+                        <div class="meta _extra">
+                            <span class="chinese"><i class="icon user"></i>李白</span>
+                            <span>喜欢: 3,322</span>
+                        </div>
+                        <div class="description chinese">
+                            <p class="_intro">君不见，黄河之水天上来，奔流到海不复回。君不见，高堂明镜悲白发，朝如青丝暮成雪...&nbsp;&nbsp;<a href="/poem/show"
+                                                                                                       class="selected">全文</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="content">
+                        <a class="header">标题</a>
+                        <div class="meta">
+                            <span>Description</span>
+                        </div>
+                        <div class="description">
+                            <p></p>
+                        </div>
+                        <div class="extra">Additional Details</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

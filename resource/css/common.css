@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'Xingshu';
+    src: url(../xingshu.ttf);
+}
+@font-face {
+    font-family: 'Monaco';
+    src: url(../Monaco.ttf);
+}
+@font-face {
+    font-family: 'Fzqk';
+    src: url(../fzqk.TTF);
+}
+@font-face {
+    font-family: 'Yanti';
+    src: url(../stfyt.ttf);
+}
+@font-face {
+    font-family: 'Qkt';
+    src: url(../qkt.ttf);
+}
+@font-face {
+    font-family: 'Lishu';
+    src: url(../xiaolishu.ttf);
+}
+@font-face {
+    font-family: 'Jlshu';/* 不行  */
+    src: url(../jianlishu.ttf);
+}
+
+@font-face {
+    font-family: 'Hanyi';
+    src: url(../hanyi.ttf);
+}
+body{
+    font-family: 'Monaco';
+    font-size: 15px;
+    /*background-color: grey;*/
+    /*color: white;
+    background-color: black;*/
+}
+.chinese{
+    font-family: Xingshu;
+}
+a:hover{
+    text-decoration: none;
+}
+.selected{
+    /*background-color: #2e3032;*/
+}
+.selected:hover{
+    text-decoration: none;
+    cursor: pointer;
+}
+.choose{
+    color: saddlebrown;
+}
+._title{
+    font-size: 22px;
+    color: black;
+}
+._intro{
+    font-size: 18px;
+}
+._cool {
+    font-family: Xingshu;
+    font-size: 25px;
+}
+span{
+    font-family:Qkt;
+    font-size: 15px;
+}
+._extra{
+    font-size: 10px;
+}

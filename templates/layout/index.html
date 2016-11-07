@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <link rel="stylesheet" type="text/css" href="/resource/semantic-2.2/semantic.min.css" />
+    <link rel="stylesheet" type="text/css" href="/resource/bootstrap-3.3.5-dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/resource/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/resource/css/common.css"/>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <title>{% block title %}{% endblock %}</title>
+    {% block css %} {% endblock %}
+</head>
+<body>
+<audio autoplay="true" loop="-1"><source src="/resource/background.mp3"></audio>
+<div class='ui visible sidebar' style="float: left;height: 100%;width: 3.5%; background-color: #2a2a2a">
+    <a href="/" class="chinese"><h4 class="text-center " style="color: darkgrey;margin-top: 18px;">诗</h4></a>
+    <a href="#"><h4 class="text-center" style="color: darkgrey;margin-top: 18px;"><span class="glyphicon glyphicon-th"></span></h4></a>
+    <a href="/center"><h4 class="text-center" style="color: darkgrey;margin-top: 18px;"><i class="icon users"></i></h4></a>
+    {% block sidebar %}{% endblock %}
+    <!--<a href="#"><h4 class="text-center" style="color: darkgrey;position: absolute; margin-left: 12px;bottom: 50px;"><span class="glyphicon glyphicon-log-out"></span></h4></a>-->
+    <a href="/login"><h4 class="text-center" style="color: darkgrey;position: absolute; margin-left: 12px;bottom: 10px;"><span class="glyphicon glyphicon-log-in"></span></h4></a>
+</div>
+<!--<div class="row">-->
+{% block content %}{% endblock %}
+<!--</div>-->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="/resource/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="/resource/semantic-2.2/semantic.min.js"></script>
+<script src="/resource/js/common.js"></script>
+<script>{% block javascript %} {%  endblock %}</script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+{% extends 'layout/index.html' %}
+
+{% block title %}
+    将进酒
+{% endblock %}
+{% block sidebar %}
+    <a href="/setting"><h4 class="text-center" style="color: darkgrey;margin-top: 18px;"><i class="icon settings"></i></h4></a>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-sm-offset-2 col-sm-8">
+            <div class="ui aligned basic segment" style="margin-top: 6%;">
+                <h1 class="text-center"><i class="icon settings"></i>设置</h1>
+                <div class="ui tabular menu" style="margin-left: 10%;width: 80%;">
+                    <a class="item active" data-tab="basic-setting">基础设置 </a>
+                    <a class="item" data-tab="basic-profile">个人资料 </a>
+                    <a class="item" data-tab="user-password">用户密码</a>
+                    <a class="item" data-tab="user-notice">通知设置</a>
+                </div>
+                <div class="ui bottom attached active tab" data-tab="basic-setting" style="border: 0;margin-left: 17%; margin-top: 40px;">
+                    <!--<h4><strong>昵称和电子邮件 </strong></h4>-->
+                    <form>
+                        <div class="form-group" style="width: 50%;">
+                            <label for="exampleInputEmail1">昵称</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="昵称" style="height: 45px;">
+                        </div>
+                        <div class="form-group" style="width: 50%;">
+                            <label for="exampleInputPassword1">电子邮件</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="电子邮件" style="height: 45px;">
+                                <div class="input-group-addon">发送</div>
+                            </div>
+                            <h6><i class="icon info"></i>输入您的常用邮箱,我们会发给您一封邮件以确认您的邮箱地址</h6>
+                        </div>
+                        <div class="ui huge submit button" style="margin-top: 20px;width: 15%;">保存 </div>
+                        <!--<button type="submit" class="btn btn-default">确认</button>-->
+                    </form>
+                </div>
+                <div class="ui bottom attached tab" data-tab="basic-profile" style="border: 0;margin-left: 17%; margin-top: 40px;">
+                    <!--<h4><strong>昵称和电子邮件 </strong></h4>-->
+                    <form>
+                        <div class="form-group" style="width: 50%;">
+                            <div class="ui feed">
+                                <div class="event">
+                                    <label>头像</label>
+                                    <div class="label">
+                                        <img src="/images/avatar/small/elliot.jpg" style="width: 80px;height: 80px;">
+                                    </div>
+                                    <div class="content" style="margin-left: 80px;margin-top: 30px;"><button class="ui button">上传</button></div>
+                                </div>
+                            </div>
+                            <!--<label for="exampleInputEmail1">头像</label>
+                            <textarea class="form-control" rows="4"></textarea>-->
+                        </div>
+                        <div class="form-group" style="width: 50%;">
+                            <label for="exampleInputEmail1">简介</label>
+                            <textarea class="form-control" rows="4"></textarea>
+                            <!--<input type="email" class="form-control" id="exampleInputEmail1" placeholder="昵称">-->
+                        </div>
+                        <div class="form-group" style="width: 50%;">
+                            <!--<label for="exampleInputPassword1">电子邮件</label>-->
+                            <label>个人主页</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="您的个人主页http://example.com" style="height: 43px;">
+                        </div>
+                        <div class="form-group" style="width: 50%;">
+                            <label>微信号管理</label><br/>
+                            <!--<div style="width: 100px;height: 100px;">
+                                <span class="fa fa-qrcode" style="width: 100px;height: 100px"></span>
+                            </div>-->
+                            <span style="font-size: 100px;margin-left: -5%;float: left;margin-top: -2%;"><i class="icon qrcode"></i></span>
+                            <span style="float:left;margin-top: 5%;"><button class="ui big button">上传</button></span>
+                            <span style="float: left;margin-top: 18%;margin-left: -19%;"><button class="ui big button">删除</button></span>
+                        </div>
+                        <div class="ui huge submit button" style="float: left;margin-top: 18%;margin-left: -25%;width: 15%;">保存 </div>
+                        <!--<button type="submit" class="btn btn-default">确认</button>-->
+                    </form>
+                </div>
+                <div class="ui bottom attached tab" data-tab="user-password" style="border: 0;margin-left: 17%; margin-top: 40px;">
+                    <form>
+                        <div class="form-group" style="width: 50%;">
+                            <label for="exampleInputEmail1">当前密码</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="当前密码" style="height: 43px;">
+                        </div>
+                        <div class="form-group" style="width: 50%;">
+                            <label for="exampleInputPassword1">新密码</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="新密码" style="height: 43px;">
+                            <!--<h6><i class="icon info"></i>输入您的常用邮箱,我们会发给您一封邮件以确认您的邮箱地址</h6>-->
+                        </div>
+                        <div class="form-group" style="width: 50%;">
+                            <label for="exmpaleInputPassowrd1">确认新密码</label>
+                            <input type="password" class="form-control" placeholder="确认新密码" style="height: 43px;">
+                        </div>
+                        <div class="ui huge submit button" style="margin-top: 20px;width: 15%;">保存 </div>
+                        <!--<button type="submit" class="btn btn-default">确认</button>-->
+                    </form>
+                </div>
+                <div class="ui bottom attached tab" data-tab="user-notice" style="border: 0;margin-left: 17%; margin-top: 40px;">
+                    <form>
+                        <div class="form-group">
+                            <label>邮件通知设置</label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                    关注的标签有动态即邮件发送消息
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                    汇总动态每周发送
+                                </label>
+                            </div>
+                            <div class="radio disabled">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+                                    什么都不做就好
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>本站精选</label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                    标签热门类型推送
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                    你居然是一个主动的人(自己寻找，不推送)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>消息设置</label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                    接受所有消息
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                    只接受我关注的人的消息
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                    就是不接受任何人的消息
+                                </label>
+                            </div>
+                        </div>
+                        <div class="ui huge submit button" style="margin-top: 20px;width: 15%;">保存 </div>
+                        <!--<button type="submit" class="btn btn-default">确认</button>-->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

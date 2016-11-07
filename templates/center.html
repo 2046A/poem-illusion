@@ -1,0 +1,278 @@
+{% extends 'layout/index.html' %}
+{% block title %}
+    圈子
+{% endblock %}
+
+{% block sidebar %}
+    <a href="/setting"><h4 class="text-center" style="color: darkgrey;margin-top: 18px;"><i class="icon settings"></i></h4></a>
+{% endblock %}
+
+{% block content %}
+    <div style="float: left;height: 100%;width: 23%; background-image: url(/resource/images/left.jpg)">
+        <h2 class='chinese' style="color: white;position: absolute; margin-left: 60px;bottom: 150px; font-size: 40px;">
+            关注的人</h2>
+        <h4 class='chinese' style="color: white;position: absolute; margin-left: 60px;bottom: 100px; font-size: 20px;">
+            无聊的消息集散点</h4>
+        <h5 class='chinese' style="color: white; position: absolute; margin-left: 60px; bottom: 80px;">
+            已关注: 你还是太懒了, 零人</h5>
+    </div>
+    <div style='float: left; height: 100%;width: 73.5%'>
+        <div class="row">
+            <div class="col-sm-offset-2 col-sm-8">
+                <div class="ui aligned basic segment">
+                    <div class="ui tabular secondary menu" style="margin-left: -25%;width: 80%;">
+                        <a class="item active" data-tab="my-label">基本信息</a>
+                        <a class="item" data-tab="friend-dynamic">朋友动态 </a>
+                        <a class="item" data-tab="my-collection">我的关注及收藏 </a>
+                        <a class="item" data-tab="my-message">消息</a>
+                    </div>
+                    <div class="ui bottom attached tab" data-tab="friend-dynamic" style="border: 0;margin-left: -23%; margin-top: 40px;">
+                        <div class="ui feed">
+                            <div class="event">
+                                <div class="label">
+                                    <img src="/resource/images/author/header.jpg" style="width: 30px;height: 30px;">
+                                </div>
+                                <div class="content" style="margin-left: 5%;margin-top: 1%;">
+                                    <div class="summary">EESAMA added <a>Jenny Hess</a> to your <a>coworker</a> group. <div class="date">3 days ago </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="event" style="margin-top: 20px;">
+                                <div class="label">
+                                    <img src="/resource/images/author/header.jpg" style="width: 30px;height: 30px;">
+                                </div>
+                                <div class="content" style="margin-left: 5%;margin-top: 2%;">
+                                    <div class="summary">EESAMA added <a>Jenny Hess</a> to your <a>coworker</a> group. <div class="date">3 days ago </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="event" style="margin-top: 20px;">
+                                <div class="label">
+                                    <img src="/resource/images/author/header.jpg" style="width: 30px;height: 30px;">
+                                </div>
+                                <div class="content" style="margin-left: 5%;margin-top: 2%;">
+                                    <div class="summary">EESAMA added <a>Jenny Hess</a> to your <a>coworker</a> group. <div class="date">3 days ago </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="event" style="margin-top: 20px;">
+                                <div class="label">
+                                    <img src="/resource/images/author/header.jpg" style="width: 30px;height: 30px;">
+                                </div>
+                                <div class="content" style="margin-left: 5%;margin-top: 2%;">
+                                    <div class="summary">EESAMA added <a>Jenny Hess</a> to your <a>coworker</a> group. <div class="date">3 days ago </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="event" style="margin-top: 20px;">
+                                <div class="label">
+                                    <img src="/resource/images/author/header.jpg" style="width: 30px;height: 30px;">
+                                </div>
+                                <div class="content" style="margin-left: 5%;margin-top: 2%;">
+                                    <div class="summary">EESAMA added <a>Jenny Hess</a> to your <a>coworker</a> group. <div class="date">3 days ago </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui bottom attached tab" data-tab="my-collection" style="border: 0;margin-left: -23%; margin-top: 40px;">
+                        <div class="ui aligned basic segment" style="margin-top: -5%;">
+                            <label>站友</label><br/>
+                            <div class="ui horizontal list">
+                                <div class="item">
+                                    <img class="ui mini circular image" src="/images/avatar2/small/molly.png">
+                                    <div class="content">
+                                        <div class="ui sub header">Molly</div>Coordinator </div>
+                                </div>
+                                <div class="item">
+                                    <img class="ui mini circular image" src="/images/avatar2/small/elyse.png">
+                                    <div class="content">
+                                        <div class="ui sub header">Elyse</div>Developer </div>
+                                </div>
+                                <div class="item">
+                                    <img src="/images/avatar2/small/eve.png" class="ui mini circular image">
+                                    <div class="content">
+                                        <div class="ui sub header">Eve</div>Project Manager </div>
+                                </div>
+                            </div>
+                            <br/>
+                            <label style="margin-top: 30px;">古人</label><br/>
+                            <div class="ui horizontal list">
+                                <div class="item">
+                                    <img class="ui mini circular image" src="/images/avatar2/small/molly.png">
+                                    <div class="content">
+                                        <div class="ui sub header">Molly</div>Coordinator </div>
+                                </div>
+                                <div class="item">
+                                    <img class="ui mini circular image" src="/images/avatar2/small/elyse.png">
+                                    <div class="content">
+                                        <div class="ui sub header">Elyse</div>Developer </div>
+                                </div>
+                                <div class="item">
+                                    <img src="/images/avatar2/small/eve.png" class="ui mini circular image">
+                                    <div class="content">
+                                        <div class="ui sub header">Eve</div>Project Manager </div>
+                                </div>
+                            </div><br/>
+                            <label style="margin-top: 30px;">诗词</label><br/>
+                            <div class="ui items">
+                                <div class="item">
+                                    <div class="ui circular image">
+                                        <img src="/resource/images/author/liqingzhao.jpg" style="width: 80px;height: 80px;">
+                                    </div>
+                                    <div class="content">
+                                        <h3>青玉案-横塘路</h3>
+                                        <div class="meta">
+                                            <span>晏几道</span>
+                                        </div>
+                                        <div class="description">
+                                            <p>凌波不过横塘路，但目送，芳尘去</p>
+                                        </div>
+                                        <div class="extra">Additional Details </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="ui circular image">
+                                        <img src="/resource/images/author/liqingzhao.jpg" style="width: 80px;height: 80px;">
+                                    </div>
+                                    <div class="content">
+                                        <h3>青玉案-横塘路</h3>
+                                        <div class="meta">
+                                            <span>晏几道</span>
+                                        </div>
+                                        <div class="description">
+                                            <p>凌波不过横塘路，但目送，芳尘去</p>
+                                        </div>
+                                        <div class="extra">Additional Details </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui bottom attached active tab" data-tab="my-label" style="border: 0;margin-left: -23%; margin-top: 40px;">
+                        <div class="ui items">
+                            <div class="item">
+                                <a class="ui small image">
+                                    <img src="/resource/images/author/header.jpg">
+                                </a>
+                                <div class="content">
+                                    <a class="header">Dean</a>
+                                    <div class="meta">
+                                        <span>py_rainday@163.com</span>
+                                    </div>
+                                    <div class="description">
+                                        <p>Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.</p>
+                                        <p>Many people also have their own barometers for what makes a cute dog.</p>
+                                    </div>
+                                    <div class="extra">
+                                        <span><i class="green check icon"></i>121</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui aligned basic segment" style="margin-top: 1%;">
+                            <label>站友 &nbsp;<a class='chinese selected'>更多</a></label><br/>
+                            <div class="ui horizontal list">
+                                <div class="item">
+                                    <img class="ui mini circular image" src="/images/avatar2/small/molly.png">
+                                    <div class="content">
+                                        <div class="ui sub header">Molly</div>Coordinator </div>
+                                </div>
+                                <div class="item">
+                                    <img class="ui mini circular image" src="/images/avatar2/small/elyse.png">
+                                    <div class="content">
+                                        <div class="ui sub header">Elyse</div>Developer </div>
+                                </div>
+                                <div class="item">
+                                    <img src="/images/avatar2/small/eve.png" class="ui mini circular image">
+                                    <div class="content">
+                                        <div class="ui sub header">Eve</div>Project Manager </div>
+                                </div>
+                                <div class="item">
+                                    <img src="/images/avatar2/small/eve.png" class="ui mini circular image">
+                                    <div class="content">
+                                        <div class="ui sub header">Eve</div>Project Manager </div>
+                                </div>
+                            </div>
+                            <br/>
+                            <label style="margin-top: 40px;">古人 &nbsp;<a class="chinese selected">更多</a></label><br/>
+                            <div class="ui horizontal list" style="margin-top: 10px;">
+                                <div class="item">
+                                    <img class="ui mini circular image" src="/images/avatar2/small/molly.png">
+                                    <div class="content">
+                                        <div class="ui sub header">Molly</div>Coordinator </div>
+                                </div>
+                                <div class="item">
+                                    <img class="ui mini circular image" src="/images/avatar2/small/elyse.png">
+                                    <div class="content">
+                                        <div class="ui sub header">Elyse</div>Developer </div>
+                                </div>
+                                <div class="item">
+                                    <img src="/images/avatar2/small/eve.png" class="ui mini circular image">
+                                    <div class="content">
+                                        <div class="ui sub header">Eve</div>Project Manager </div>
+                                </div>
+                                <div class="item">
+                                    <img src="/images/avatar2/small/eve.png" class="ui mini circular image">
+                                    <div class="content">
+                                        <div class="ui sub header">Eve</div>Project Manager </div>
+                                </div>
+                            </div><br/>
+                            <label style="margin-top: 50px;">诗词  &nbsp;<a class='chinese selected'>更多</a></label><br/>
+                            <div class="ui items" style="margin-top: 10px;">
+                                <div class="item">
+                                    <div class="ui circular image">
+                                        <img src="/resource/images/author/liqingzhao.jpg" style="width: 90px;height: 90px;">
+                                    </div>
+                                    <div class="content">
+                                        <h3>青玉案-横塘路</h3>
+                                        <div class="meta">
+                                            <span>晏几道</span>
+                                        </div>
+                                        <div class="description">
+                                            <p>凌波不过横塘路，但目送，芳尘去</p>
+                                        </div>
+                                        <div class="extra">Additional Details </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui items" style="margin-left: 55%;margin-top: -16%;">
+                                <div class="item">
+                                    <div class="ui circular image">
+                                        <img src="/resource/images/author/liqingzhao.jpg" style="width: 90px;height: 90px;">
+                                    </div>
+                                    <div class="content">
+                                        <h3>青玉案-横塘路</h3>
+                                        <div class="meta">
+                                            <span>晏几道</span>
+                                        </div>
+                                        <div class="description">
+                                            <p>凌波不过横塘路，但目送，芳尘去</p>
+                                        </div>
+                                        <div class="extra">Additional Details </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui bottom attached tab" data-tab="my-message" style="border: 0;margin-left: -23%; margin-top: 40px;">
+                        <div class="ui positive message">
+                            <i class="close icon"></i>
+                            <div class="header">刚刚你已经成为本站的用户，恭喜我吧！ </div>
+                            <!--<p>Go to your <b>special offers</b> page to see now.</p>-->
+                        </div>
+                        <div class="ui message">
+                            <label>EESAMA&nbsp;:&nbsp;&nbsp;</label>
+                            <!--<i class="inbox icon"></i>-->
+                            <div class="content">
+                                <div class="header">Have you heard about our mailing list? </div>
+                                <p>Get the best news in your e-mail every day.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

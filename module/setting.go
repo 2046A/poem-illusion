@@ -1,6 +1,5 @@
 /*
  * module
- * author: 
+ * author:
  */
 package module
-

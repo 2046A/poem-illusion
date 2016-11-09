@@ -1,14 +1,15 @@
 /*
  * SanPoem
- * author: 
+ * author:
  */
 package main
+
 import (
 	"illusion"
 	"poem-illusion/module"
 )
 
-func main(){
+func main() {
 	poem := illusion.App()
 	poem.ViewPath("templates")
 	poem.LogPath("log")
@@ -23,5 +24,3 @@ func main(){
 	poem.Run(":9090")
 
 }
-
-

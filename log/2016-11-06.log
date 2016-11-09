@@ -1,0 +1,28 @@
+2016/11/06 11:58:36 server.go:2317: http: panic serving [::1]:59541: runtime error: invalid memory address or nil pointer dereference
+goroutine 11 [running]:
+net/http.(*conn).serve.func1(0xc420011400)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1491 +0x12a
+panic(0x2fb260, 0xc42000c0b0)
+	/usr/local/Cellar/go/1.7.1/libexec/src/runtime/panic.go:458 +0x243
+github.com/flosch/pongo2.(*Template).newBufferAndExecute(0x0, 0xc4201edc80, 0xc42003ba78, 0x1, 0x600c1)
+	/Users/ivan/Documents/mygo/src/github.com/flosch/pongo2/template.go:142 +0x3a
+github.com/flosch/pongo2.(*Template).Execute(0x0, 0xc4201edc80, 0xc42003ba78, 0x4aec40, 0xc42018c5a0, 0xc4201ba6c0)
+	/Users/ivan/Documents/mygo/src/github.com/flosch/pongo2/template.go:186 +0x39
+illusion.(*Template).Content(0xc4200c90e0, 0x350fbf, 0x8, 0xc4201edc80, 0xc4201f0d80, 0xc42003baf0, 0xda9b)
+	/Users/ivan/Documents/mygo/src/illusion/render.go:68 +0xf7
+illusion.(*Context).View(0xc4200dca10, 0x350fbf, 0x8, 0xc4201edc80)
+	/Users/ivan/Documents/mygo/src/illusion/context.go:291 +0x56
+illusion.urlNotFoundHandler(0xc4200dca10)
+	/Users/ivan/Documents/mygo/src/illusion/illusion.go:342 +0x112
+illusion.(*Context).Next(0xc4200dca10)
+	/Users/ivan/Documents/mygo/src/illusion/context.go:113 +0x53
+illusion.(*Illusion).handleRequest(0xc4200a2370, 0xc4200dca10)
+	/Users/ivan/Documents/mygo/src/illusion/illusion.go:327 +0x1b7
+illusion.(*Illusion).ServeHTTP(0xc4200a2370, 0x4b3ac0, 0xc4200ed110, 0xc4200cce10)
+	/Users/ivan/Documents/mygo/src/illusion/illusion.go:274 +0x114
+net/http.serverHandler.ServeHTTP(0xc420010380, 0x4b3ac0, 0xc4200ed110, 0xc4200cce10)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:2202 +0x7d
+net/http.(*conn).serve(0xc420011400, 0x4b4100, 0xc4201ba640)
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:1579 +0x4b7
+created by net/http.(*Server).Serve
+	/usr/local/Cellar/go/1.7.1/libexec/src/net/http/server.go:2293 +0x44d

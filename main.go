@@ -5,7 +5,7 @@
 package main
 import (
 	"illusion"
-	"SanPoem/module"
+	"poem-illusion/module"
 )
 
 func main(){
@@ -17,6 +17,8 @@ func main(){
 	//开始注册blueprint
 	poem.Register(module.HomeBlueprint())
 	poem.Register(module.PoemBlueprint())
+	poem.Register(module.CenterBlueprint())
+	poem.Register(module.Setting())
 
 	poem.Run(":9090")
 

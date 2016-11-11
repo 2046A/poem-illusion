@@ -41,7 +41,7 @@ $.fn.search = function(parameters) {
         namespace       = settings.namespace,
 
         eventNamespace  = '.' + namespace,
-        moduleNamespace = namespace + '-module',
+        moduleNamespace = namespace + '-handler',
 
         $module         = $(this),
         $prompt         = $module.find(selector.prompt),
@@ -59,7 +59,7 @@ $.fn.search = function(parameters) {
       module = {
 
         initialize: function() {
-          module.verbose('Initializing module');
+          module.verbose('Initializing handler');
           module.determine.searchFields();
           module.bind.events();
           module.set.type();
@@ -67,7 +67,7 @@ $.fn.search = function(parameters) {
           module.instantiate();
         },
         instantiate: function() {
-          module.verbose('Storing instance of module', module);
+          module.verbose('Storing instance of handler', module);
           instance = module;
           $module
             .data(moduleNamespace, module)
@@ -1092,7 +1092,7 @@ $.fn.search.settings = {
   },
 
   error : {
-    source      : 'Cannot search. No source used, and Semantic API module was not included',
+    source      : 'Cannot search. No source used, and Semantic API handler was not included',
     noResults   : 'Your search returned no results',
     logging     : 'Error in debug logging, exiting.',
     noEndpoint  : 'No search endpoint was specified',

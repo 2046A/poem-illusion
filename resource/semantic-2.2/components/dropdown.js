@@ -47,7 +47,7 @@ $.fn.dropdown = function(parameters) {
         templates       = settings.templates,
 
         eventNamespace  = '.' + namespace,
-        moduleNamespace = 'module-' + namespace,
+        moduleNamespace = 'handler-' + namespace,
 
         $module         = $(this),
         $context        = $(settings.context),
@@ -328,7 +328,7 @@ $.fn.dropdown = function(parameters) {
           },
           reference: function() {
             module.debug('Dropdown behavior was called on select, replacing with closest dropdown');
-            // replace module reference
+            // replace handler reference
             $module = $module.parent(selector.dropdown);
             module.refresh();
             module.setup.returnedObject();
@@ -3104,9 +3104,9 @@ $.fn.dropdown.settings = {
     alreadySetup : 'Once a select has been initialized behaviors must be called on the created ui dropdown',
     labels       : 'Allowing user additions currently requires the use of labels.',
     method       : 'The method you called is not defined.',
-    noAPI        : 'The API module is required to load resources remotely',
+    noAPI        : 'The API handler is required to load resources remotely',
     noStorage    : 'Saving remote data requires session storage',
-    noTransition : 'This module requires ui transitions <https://github.com/Semantic-Org/UI-Transition>'
+    noTransition : 'This handler requires ui transitions <https://github.com/Semantic-Org/UI-Transition>'
   },
 
   regExp : {

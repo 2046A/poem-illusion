@@ -46,7 +46,7 @@ $.fn.popup = function(parameters) {
         namespace          = settings.namespace,
 
         eventNamespace     = '.' + settings.namespace,
-        moduleNamespace    = 'module-' + namespace,
+        moduleNamespace    = 'handler-' + namespace,
 
         $module            = $(this),
         $context           = $(settings.context),
@@ -132,7 +132,7 @@ $.fn.popup = function(parameters) {
         },
 
         destroy: function() {
-          module.debug('Destroying previous module');
+          module.debug('Destroying previous handler');
           // remove element only if was created dynamically
           if($popup && !settings.preserve) {
             module.removePopup();
@@ -821,7 +821,7 @@ $.fn.popup = function(parameters) {
               }
               else if(!settings.lastResort) {
                 module.debug('Popup could not find a position in view', $popup);
-                // module.error(error.cannotPlace, element);
+                // handler.error(error.cannotPlace, element);
                 module.remove.attempts();
                 module.remove.loading();
                 module.reset();
@@ -864,7 +864,7 @@ $.fn.popup = function(parameters) {
 
         bind: {
           events: function() {
-            module.debug('Binding popup events to module');
+            module.debug('Binding popup events to handler');
             if(settings.on == 'click') {
               $module
                 .on('click' + eventNamespace, module.toggle)
@@ -1170,7 +1170,7 @@ $.fn.popup.settings = {
 
   name         : 'Popup',
 
-  // module settings
+  // handler settings
   debug        : false,
   verbose      : false,
   performance  : true,
@@ -1277,7 +1277,7 @@ $.fn.popup.settings = {
     invalidPosition : 'The position you specified is not a valid position',
     cannotPlace     : 'No visible position could be found for the popup',
     method          : 'The method you called is not defined.',
-    noTransition    : 'This module requires ui transitions <https://github.com/Semantic-Org/UI-Transition>',
+    noTransition    : 'This handler requires ui transitions <https://github.com/Semantic-Org/UI-Transition>',
     notFound        : 'The target or popup you specified does not exist on the page'
   },
 

@@ -40,7 +40,7 @@ $.fn.visibility = function(parameters) {
         metadata        = settings.metadata,
 
         eventNamespace  = '.' + namespace,
-        moduleNamespace = 'module-' + namespace,
+        moduleNamespace = 'handler-' + namespace,
 
         $window         = $(window),
 
@@ -107,7 +107,7 @@ $.fn.visibility = function(parameters) {
         },
 
         destroy: function() {
-          module.verbose('Destroying previous module');
+          module.verbose('Destroying previous handler');
           if(observer) {
             observer.disconnect();
           }

@@ -38,7 +38,7 @@ $.fn.checkbox = function(parameters) {
         error           = settings.error,
 
         eventNamespace  = '.' + namespace,
-        moduleNamespace = 'module-' + namespace,
+        moduleNamespace = 'handler-' + namespace,
 
         $module         = $(this),
         $label          = $(this).children(selector.label),
@@ -68,7 +68,7 @@ $.fn.checkbox = function(parameters) {
         },
 
         instantiate: function() {
-          module.verbose('Storing instance of module', module);
+          module.verbose('Storing instance of handler', module);
           instance = module;
           $module
             .data(moduleNamespace, module)
@@ -76,7 +76,7 @@ $.fn.checkbox = function(parameters) {
         },
 
         destroy: function() {
-          module.verbose('Destroying module');
+          module.verbose('Destroying handler');
           module.unbind.events();
           module.show.input();
           $module.removeData(moduleNamespace);

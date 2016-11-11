@@ -39,7 +39,7 @@ $.fn.sticky = function(parameters) {
         error                 = settings.error,
 
         eventNamespace        = '.' + namespace,
-        moduleNamespace       = 'module-' + namespace,
+        moduleNamespace       = 'handler-' + namespace,
 
         $module               = $(this),
         $window               = $(window),
@@ -80,7 +80,7 @@ $.fn.sticky = function(parameters) {
         },
 
         instantiate: function() {
-          module.verbose('Storing instance of module', module);
+          module.verbose('Storing instance of handler', module);
           instance = module;
           $module
             .data(moduleNamespace, module)
@@ -352,7 +352,7 @@ $.fn.sticky = function(parameters) {
             ;
             if(tagName === 'HTML' || tagName == 'body') {
               // this can trigger for too many reasons
-              //module.error(error.container, tagName, $module);
+              //handler.error(error.container, tagName, $handler);
               module.determineContainer();
             }
             else {

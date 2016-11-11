@@ -43,7 +43,7 @@ $.fn.progress = function(parameters) {
         error           = settings.error,
 
         eventNamespace  = '.' + namespace,
-        moduleNamespace = 'module-' + namespace,
+        moduleNamespace = 'handler-' + namespace,
 
         $module         = $(this),
         $bar            = $(this).find(selector.bar),

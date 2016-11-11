@@ -47,7 +47,7 @@ $.api = $.fn.api = function(parameters) {
 
         // define namespaces for modules
         eventNamespace  = '.' + namespace,
-        moduleNamespace = 'module-' + namespace,
+        moduleNamespace = 'handler-' + namespace,
 
         // element that creates request
         $module         = $(this),
@@ -65,7 +65,7 @@ $.api = $.fn.api = function(parameters) {
         data,
         requestStartTime,
 
-        // standard module
+        // standard handler
         element         = this,
         context         = $context[0],
         instance        = $module.data(moduleNamespace),
@@ -82,7 +82,7 @@ $.api = $.fn.api = function(parameters) {
         },
 
         instantiate: function() {
-          module.verbose('Storing instance of module', module);
+          module.verbose('Storing instance of handler', module);
           instance = module;
           $module
             .data(moduleNamespace, instance)
@@ -90,7 +90,7 @@ $.api = $.fn.api = function(parameters) {
         },
 
         destroy: function() {
-          module.verbose('Destroying previous module for', element);
+          module.verbose('Destroying previous handler for', element);
           $module
             .removeData(moduleNamespace)
             .off(eventNamespace)

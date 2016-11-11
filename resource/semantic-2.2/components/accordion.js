@@ -45,7 +45,7 @@ $.fn.accordion = function(parameters) {
         error           = settings.error,
 
         eventNamespace  = '.' + namespace,
-        moduleNamespace = 'module-' + namespace,
+        moduleNamespace = 'handler-' + namespace,
         moduleSelector  = $allModules.selector || '',
 
         $module  = $(this),

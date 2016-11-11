@@ -50,7 +50,7 @@ $.fn.shape = function(parameters) {
 
         // define namespaces for modules
         eventNamespace  = '.' + namespace,
-        moduleNamespace = 'module-' + namespace,
+        moduleNamespace = 'handler-' + namespace,
 
         // selector cache
         $module       = $(this),
@@ -62,7 +62,7 @@ $.fn.shape = function(parameters) {
         $activeSide,
         $nextSide,
 
-        // standard module
+        // standard handler
         element       = this,
         instance      = $module.data(moduleNamespace),
         module
@@ -71,13 +71,13 @@ $.fn.shape = function(parameters) {
       module = {
 
         initialize: function() {
-          module.verbose('Initializing module for', element);
+          module.verbose('Initializing handler for', element);
           module.set.defaultSide();
           module.instantiate();
         },
 
         instantiate: function() {
-          module.verbose('Storing instance of module', module);
+          module.verbose('Storing instance of handler', module);
           instance = module;
           $module
             .data(moduleNamespace, instance)
@@ -85,7 +85,7 @@ $.fn.shape = function(parameters) {
         },
 
         destroy: function() {
-          module.verbose('Destroying previous module for', element);
+          module.verbose('Destroying previous handler for', element);
           $module
             .removeData(moduleNamespace)
             .off(eventNamespace)
@@ -825,7 +825,7 @@ $.fn.shape = function(parameters) {
 
 $.fn.shape.settings = {
 
-  // module info
+  // handler info
   name : 'Shape',
 
   // debug content outputted to console

@@ -39,7 +39,7 @@ $.fn.nag = function(parameters) {
         namespace       = settings.namespace,
 
         eventNamespace  = '.' + namespace,
-        moduleNamespace = namespace + '-module',
+        moduleNamespace = namespace + '-handler',
 
         $module         = $(this),
 

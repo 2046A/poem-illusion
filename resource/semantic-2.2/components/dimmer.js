@@ -40,7 +40,7 @@ $.fn.dimmer = function(parameters) {
         error           = settings.error,
 
         eventNamespace  = '.' + namespace,
-        moduleNamespace = 'module-' + namespace,
+        moduleNamespace = 'handler-' + namespace,
         moduleSelector  = $allModules.selector || '',
 
         clickEvent      = ('ontouchstart' in document.documentElement)
@@ -109,7 +109,7 @@ $.fn.dimmer = function(parameters) {
         },
 
         instantiate: function() {
-          module.verbose('Storing instance of module', module);
+          module.verbose('Storing instance of handler', module);
           instance = module;
           $module
             .data(moduleNamespace, instance)
@@ -117,7 +117,7 @@ $.fn.dimmer = function(parameters) {
         },
 
         destroy: function() {
-          module.verbose('Destroying previous module', $dimmer);
+          module.verbose('Destroying previous handler', $dimmer);
           $module
             .removeData(moduleNamespace)
           ;

@@ -82,7 +82,7 @@ $.fn.form = function(parameters) {
         },
 
         instantiate: function() {
-          module.verbose('Storing instance of module', module);
+          module.verbose('Storing instance of handler', module);
           instance = module;
           $module
             .data(moduleNamespace, module)
@@ -90,7 +90,7 @@ $.fn.form = function(parameters) {
         },
 
         destroy: function() {
-          module.verbose('Destroying previous module', instance);
+          module.verbose('Destroying previous handler', instance);
           module.removeEvents();
           $module
             .removeData(moduleNamespace)
@@ -370,7 +370,7 @@ $.fn.form = function(parameters) {
             selector        = settings.selector;
             className       = settings.className;
             error           = settings.error;
-            moduleNamespace = 'module-' + namespace;
+            moduleNamespace = 'handler-' + namespace;
             eventNamespace  = '.' + namespace;
 
             // grab instance

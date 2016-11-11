@@ -51,7 +51,7 @@ $.fn.modal = function(parameters) {
         error           = settings.error,
 
         eventNamespace  = '.' + namespace,
-        moduleNamespace = 'module-' + namespace,
+        moduleNamespace = 'handler-' + namespace,
 
         $module         = $(this),
         $context        = $(settings.context),

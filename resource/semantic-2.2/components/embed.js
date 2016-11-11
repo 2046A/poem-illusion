@@ -46,7 +46,7 @@ $.fn.embed = function(parameters) {
         templates       = settings.templates,
 
         eventNamespace  = '.' + namespace,
-        moduleNamespace = 'module-' + namespace,
+        moduleNamespace = 'handler-' + namespace,
 
         $window         = $(window),
         $module         = $(this),
@@ -70,7 +70,7 @@ $.fn.embed = function(parameters) {
         },
 
         instantiate: function() {
-          module.verbose('Storing instance of module', module);
+          module.verbose('Storing instance of handler', module);
           instance = module;
           $module
             .data(moduleNamespace, module)

@@ -53,7 +53,7 @@ $.fn.sidebar = function(parameters) {
         error           = settings.error,
 
         eventNamespace  = '.' + namespace,
-        moduleNamespace = 'module-' + namespace,
+        moduleNamespace = 'handler-' + namespace,
 
         $module         = $(this),
         $context        = $(settings.context),
@@ -103,7 +103,7 @@ $.fn.sidebar = function(parameters) {
         },
 
         instantiate: function() {
-          module.verbose('Storing instance of module', module);
+          module.verbose('Storing instance of handler', module);
           instance = module;
           $module
             .data(moduleNamespace, module)
@@ -119,7 +119,7 @@ $.fn.sidebar = function(parameters) {
         },
 
         destroy: function() {
-          module.verbose('Destroying previous module for', $module);
+          module.verbose('Destroying previous handler for', $module);
           module.remove.direction();
           $module
             .off(eventNamespace)

@@ -51,7 +51,7 @@
           error     = settings.error,
 
           // boilerplate
-          instance   = $module.data('module-' + namespace),
+          instance   = $module.data('handler-' + namespace),
           module
         ;
 
@@ -100,7 +100,7 @@
                   module.canvas.merge();
                 });
                 $module
-                  .data('module-' + namespace, module)
+                  .data('handler-' + namespace, module)
                 ;
               });
             }

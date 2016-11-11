@@ -2,7 +2,7 @@
  * module
  * author:
  */
-package module
+package handler
 
 import "illusion"
 
@@ -12,7 +12,8 @@ func show(c *illusion.Context) {
 
 func PoemBlueprint() *illusion.Blueprint {
 	poem := illusion.BluePrint("/poem", "poem")
-	poem.Get("/show", show)
+
+	poem.Get("/:name", show)
 
 	return poem
 }

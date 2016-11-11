@@ -47,7 +47,7 @@ $.fn.tab = function(parameters) {
         error           = settings.error,
 
         eventNamespace  = '.' + settings.namespace,
-        moduleNamespace = 'module-' + settings.namespace,
+        moduleNamespace = 'handler-' + settings.namespace,
 
         $module         = $(this),
         $context,
@@ -90,7 +90,7 @@ $.fn.tab = function(parameters) {
         },
 
         instantiate: function () {
-          module.verbose('Storing instance of module', module);
+          module.verbose('Storing instance of handler', module);
           instance = module;
           $module
             .data(moduleNamespace, module)
@@ -865,7 +865,7 @@ $.fn.tab.settings = {
   },
 
   error: {
-    api        : 'You attempted to load content without API module',
+    api        : 'You attempted to load content without API handler',
     method     : 'The method you called is not defined',
     missingTab : 'Activated tab cannot be found. Tabs are case-sensitive.',
     noContent  : 'The tab you specified is missing a content url.',

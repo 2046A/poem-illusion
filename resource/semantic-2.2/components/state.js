@@ -44,7 +44,7 @@ $.fn.state = function(parameters) {
         text            = settings.text,
 
         eventNamespace  = '.' + namespace,
-        moduleNamespace = namespace + '-module',
+        moduleNamespace = namespace + '-handler',
 
         $module         = $(this),
 
@@ -56,9 +56,9 @@ $.fn.state = function(parameters) {
       module = {
 
         initialize: function() {
-          module.verbose('Initializing module');
+          module.verbose('Initializing handler');
 
-          // allow module to guess desired state based on element
+          // allow handler to guess desired state based on element
           if(settings.automatic) {
             module.add.defaults();
           }
@@ -82,7 +82,7 @@ $.fn.state = function(parameters) {
         },
 
         instantiate: function() {
-          module.verbose('Storing instance of module', module);
+          module.verbose('Storing instance of handler', module);
           instance = module;
           $module
             .data(moduleNamespace, module)
@@ -90,7 +90,7 @@ $.fn.state = function(parameters) {
         },
 
         destroy: function() {
-          module.verbose('Destroying previous module', instance);
+          module.verbose('Destroying previous handler', instance);
           $module
             .off(eventNamespace)
             .removeData(moduleNamespace)
@@ -582,7 +582,7 @@ $.fn.state = function(parameters) {
 
 $.fn.state.settings = {
 
-  // module info
+  // handler info
   name           : 'State',
 
   // debug output

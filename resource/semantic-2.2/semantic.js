@@ -37,7 +37,7 @@ $.site = $.fn.site = function(parameters) {
     error           = settings.error,
 
     eventNamespace  = '.' + namespace,
-    moduleNamespace = 'module-' + namespace,
+    moduleNamespace = 'handler-' + namespace,
 
     $document       = $(document),
     $module         = $document,
@@ -159,7 +159,7 @@ $.site = $.fn.site = function(parameters) {
             module.verbose('Changing default setting', setting, value, name);
             $.fn[name].settings[setting] = value;
             if(modifyExisting && namespace) {
-              $existingModules = $(':data(module-' + namespace + ')');
+              $existingModules = $(':data(handler-' + namespace + ')');
               if($existingModules.length > 0) {
                 module.verbose('Modifying existing settings', $existingModules);
                 $existingModules[name]('setting', setting, value);
@@ -185,7 +185,7 @@ $.site = $.fn.site = function(parameters) {
             module.verbose('Changing default setting', newSettings, name);
             $.extend(true, $.fn[name].settings, newSettings);
             if(modifyExisting && namespace) {
-              $existingModules = $(':data(module-' + namespace + ')');
+              $existingModules = $(':data(handler-' + namespace + ')');
               if($existingModules.length > 0) {
                 module.verbose('Modifying existing settings', $existingModules);
                 $existingModules[name]('setting', newSettings);
@@ -438,7 +438,7 @@ $.site.settings = {
   namespace   : 'site',
 
   error : {
-    console : 'Console cannot be restored, most likely it was overwritten outside of module',
+    console : 'Console cannot be restored, most likely it was overwritten outside of handler',
     method : 'The method you called is not defined.'
   },
 
@@ -579,7 +579,7 @@ $.fn.form = function(parameters) {
         },
 
         instantiate: function() {
-          module.verbose('Storing instance of module', module);
+          module.verbose('Storing instance of handler', module);
           instance = module;
           $module
             .data(moduleNamespace, module)
@@ -587,7 +587,7 @@ $.fn.form = function(parameters) {
         },
 
         destroy: function() {
-          module.verbose('Destroying previous module', instance);
+          module.verbose('Destroying previous handler', instance);
           module.removeEvents();
           $module
             .removeData(moduleNamespace)
@@ -867,7 +867,7 @@ $.fn.form = function(parameters) {
             selector        = settings.selector;
             className       = settings.className;
             error           = settings.error;
-            moduleNamespace = 'module-' + namespace;
+            moduleNamespace = 'handler-' + namespace;
             eventNamespace  = '.' + namespace;
 
             // grab instance
@@ -1799,7 +1799,7 @@ $.fn.accordion = function(parameters) {
         error           = settings.error,
 
         eventNamespace  = '.' + namespace,
-        moduleNamespace = 'module-' + namespace,
+        moduleNamespace = 'handler-' + namespace,
         moduleSelector  = $allModules.selector || '',
 
         $module  = $(this),
@@ -2385,7 +2385,7 @@ $.fn.checkbox = function(parameters) {
         error           = settings.error,
 
         eventNamespace  = '.' + namespace,
-        moduleNamespace = 'module-' + namespace,
+        moduleNamespace = 'handler-' + namespace,
 
         $module         = $(this),
         $label          = $(this).children(selector.label),
@@ -2415,7 +2415,7 @@ $.fn.checkbox = function(parameters) {
         },
 
         instantiate: function() {
-          module.verbose('Storing instance of module', module);
+          module.verbose('Storing instance of handler', module);
           instance = module;
           $module
             .data(moduleNamespace, module)
@@ -2423,7 +2423,7 @@ $.fn.checkbox = function(parameters) {
         },
 
         destroy: function() {
-          module.verbose('Destroying module');
+          module.verbose('Destroying handler');
           module.unbind.events();
           module.show.input();
           $module.removeData(moduleNamespace);
@@ -3094,7 +3094,7 @@ $.fn.dimmer = function(parameters) {
         error           = settings.error,
 
         eventNamespace  = '.' + namespace,
-        moduleNamespace = 'module-' + namespace,
+        moduleNamespace = 'handler-' + namespace,
         moduleSelector  = $allModules.selector || '',
 
         clickEvent      = ('ontouchstart' in document.documentElement)
@@ -3163,7 +3163,7 @@ $.fn.dimmer = function(parameters) {
         },
 
         instantiate: function() {
-          module.verbose('Storing instance of module', module);
+          module.verbose('Storing instance of handler', module);
           instance = module;
           $module
             .data(moduleNamespace, instance)
@@ -3171,7 +3171,7 @@ $.fn.dimmer = function(parameters) {
         },
 
         destroy: function() {
-          module.verbose('Destroying previous module', $dimmer);
+          module.verbose('Destroying previous handler', $dimmer);
           $module
             .removeData(moduleNamespace)
           ;
@@ -3768,7 +3768,7 @@ $.fn.dropdown = function(parameters) {
         templates       = settings.templates,
 
         eventNamespace  = '.' + namespace,
-        moduleNamespace = 'module-' + namespace,
+        moduleNamespace = 'handler-' + namespace,
 
         $module         = $(this),
         $context        = $(settings.context),
@@ -4049,7 +4049,7 @@ $.fn.dropdown = function(parameters) {
           },
           reference: function() {
             module.debug('Dropdown behavior was called on select, replacing with closest dropdown');
-            // replace module reference
+            // replace handler reference
             $module = $module.parent(selector.dropdown);
             module.refresh();
             module.setup.returnedObject();
@@ -6825,9 +6825,9 @@ $.fn.dropdown.settings = {
     alreadySetup : 'Once a select has been initialized behaviors must be called on the created ui dropdown',
     labels       : 'Allowing user additions currently requires the use of labels.',
     method       : 'The method you called is not defined.',
-    noAPI        : 'The API module is required to load resources remotely',
+    noAPI        : 'The API handler is required to load resources remotely',
     noStorage    : 'Saving remote data requires session storage',
-    noTransition : 'This module requires ui transitions <https://github.com/Semantic-Org/UI-Transition>'
+    noTransition : 'This handler requires ui transitions <https://github.com/Semantic-Org/UI-Transition>'
   },
 
   regExp : {
@@ -6991,7 +6991,7 @@ $.fn.embed = function(parameters) {
         templates       = settings.templates,
 
         eventNamespace  = '.' + namespace,
-        moduleNamespace = 'module-' + namespace,
+        moduleNamespace = 'handler-' + namespace,
 
         $window         = $(window),
         $module         = $(this),
@@ -7015,7 +7015,7 @@ $.fn.embed = function(parameters) {
         },
 
         instantiate: function() {
-          module.verbose('Storing instance of module', module);
+          module.verbose('Storing instance of handler', module);
           instance = module;
           $module
             .data(moduleNamespace, module)
@@ -7659,7 +7659,7 @@ $.fn.modal = function(parameters) {
         error           = settings.error,
 
         eventNamespace  = '.' + namespace,
-        moduleNamespace = 'module-' + namespace,
+        moduleNamespace = 'handler-' + namespace,
 
         $module         = $(this),
         $context        = $(settings.context),
@@ -8535,7 +8535,7 @@ $.fn.nag = function(parameters) {
         namespace       = settings.namespace,
 
         eventNamespace  = '.' + namespace,
-        moduleNamespace = namespace + '-module',
+        moduleNamespace = namespace + '-handler',
 
         $module         = $(this),
 
@@ -9019,7 +9019,7 @@ $.fn.popup = function(parameters) {
         namespace          = settings.namespace,
 
         eventNamespace     = '.' + settings.namespace,
-        moduleNamespace    = 'module-' + namespace,
+        moduleNamespace    = 'handler-' + namespace,
 
         $module            = $(this),
         $context           = $(settings.context),
@@ -9105,7 +9105,7 @@ $.fn.popup = function(parameters) {
         },
 
         destroy: function() {
-          module.debug('Destroying previous module');
+          module.debug('Destroying previous handler');
           // remove element only if was created dynamically
           if($popup && !settings.preserve) {
             module.removePopup();
@@ -9794,7 +9794,7 @@ $.fn.popup = function(parameters) {
               }
               else if(!settings.lastResort) {
                 module.debug('Popup could not find a position in view', $popup);
-                // module.error(error.cannotPlace, element);
+                // handler.error(error.cannotPlace, element);
                 module.remove.attempts();
                 module.remove.loading();
                 module.reset();
@@ -9837,7 +9837,7 @@ $.fn.popup = function(parameters) {
 
         bind: {
           events: function() {
-            module.debug('Binding popup events to module');
+            module.debug('Binding popup events to handler');
             if(settings.on == 'click') {
               $module
                 .on('click' + eventNamespace, module.toggle)
@@ -10143,7 +10143,7 @@ $.fn.popup.settings = {
 
   name         : 'Popup',
 
-  // module settings
+  // handler settings
   debug        : false,
   verbose      : false,
   performance  : true,
@@ -10250,7 +10250,7 @@ $.fn.popup.settings = {
     invalidPosition : 'The position you specified is not a valid position',
     cannotPlace     : 'No visible position could be found for the popup',
     method          : 'The method you called is not defined.',
-    noTransition    : 'This module requires ui transitions <https://github.com/Semantic-Org/UI-Transition>',
+    noTransition    : 'This handler requires ui transitions <https://github.com/Semantic-Org/UI-Transition>',
     notFound        : 'The target or popup you specified does not exist on the page'
   },
 
@@ -10370,7 +10370,7 @@ $.fn.progress = function(parameters) {
         error           = settings.error,
 
         eventNamespace  = '.' + namespace,
-        moduleNamespace = 'module-' + namespace,
+        moduleNamespace = 'handler-' + namespace,
 
         $module         = $(this),
         $bar            = $(this).find(selector.bar),
@@ -11160,7 +11160,7 @@ $.fn.rating = function(parameters) {
         error           = settings.error,
 
         eventNamespace  = '.' + namespace,
-        moduleNamespace = 'module-' + namespace,
+        moduleNamespace = 'handler-' + namespace,
 
         element         = this,
         instance        = $(this).data(moduleNamespace),
@@ -11174,7 +11174,7 @@ $.fn.rating = function(parameters) {
       module = {
 
         initialize: function() {
-          module.verbose('Initializing rating module', settings);
+          module.verbose('Initializing rating handler', settings);
 
           if($icon.length === 0) {
             module.setup.layout();
@@ -11191,7 +11191,7 @@ $.fn.rating = function(parameters) {
         },
 
         instantiate: function() {
-          module.verbose('Instantiating module', settings);
+          module.verbose('Instantiating handler', settings);
           instance = module;
           $module
             .data(moduleNamespace, module)
@@ -11637,7 +11637,7 @@ $.fn.search = function(parameters) {
         namespace       = settings.namespace,
 
         eventNamespace  = '.' + namespace,
-        moduleNamespace = namespace + '-module',
+        moduleNamespace = namespace + '-handler',
 
         $module         = $(this),
         $prompt         = $module.find(selector.prompt),
@@ -11655,7 +11655,7 @@ $.fn.search = function(parameters) {
       module = {
 
         initialize: function() {
-          module.verbose('Initializing module');
+          module.verbose('Initializing handler');
           module.determine.searchFields();
           module.bind.events();
           module.set.type();
@@ -11663,7 +11663,7 @@ $.fn.search = function(parameters) {
           module.instantiate();
         },
         instantiate: function() {
-          module.verbose('Storing instance of module', module);
+          module.verbose('Storing instance of handler', module);
           instance = module;
           $module
             .data(moduleNamespace, module)
@@ -12688,7 +12688,7 @@ $.fn.search.settings = {
   },
 
   error : {
-    source      : 'Cannot search. No source used, and Semantic API module was not included',
+    source      : 'Cannot search. No source used, and Semantic API handler was not included',
     noResults   : 'Your search returned no results',
     logging     : 'Error in debug logging, exiting.',
     noEndpoint  : 'No search endpoint was specified',
@@ -12925,7 +12925,7 @@ $.fn.shape = function(parameters) {
 
         // define namespaces for modules
         eventNamespace  = '.' + namespace,
-        moduleNamespace = 'module-' + namespace,
+        moduleNamespace = 'handler-' + namespace,
 
         // selector cache
         $module       = $(this),
@@ -12937,7 +12937,7 @@ $.fn.shape = function(parameters) {
         $activeSide,
         $nextSide,
 
-        // standard module
+        // standard handler
         element       = this,
         instance      = $module.data(moduleNamespace),
         module
@@ -12946,13 +12946,13 @@ $.fn.shape = function(parameters) {
       module = {
 
         initialize: function() {
-          module.verbose('Initializing module for', element);
+          module.verbose('Initializing handler for', element);
           module.set.defaultSide();
           module.instantiate();
         },
 
         instantiate: function() {
-          module.verbose('Storing instance of module', module);
+          module.verbose('Storing instance of handler', module);
           instance = module;
           $module
             .data(moduleNamespace, instance)
@@ -12960,7 +12960,7 @@ $.fn.shape = function(parameters) {
         },
 
         destroy: function() {
-          module.verbose('Destroying previous module for', element);
+          module.verbose('Destroying previous handler for', element);
           $module
             .removeData(moduleNamespace)
             .off(eventNamespace)
@@ -13700,7 +13700,7 @@ $.fn.shape = function(parameters) {
 
 $.fn.shape.settings = {
 
-  // module info
+  // handler info
   name : 'Shape',
 
   // debug content outputted to console
@@ -13804,7 +13804,7 @@ $.fn.sidebar = function(parameters) {
         error           = settings.error,
 
         eventNamespace  = '.' + namespace,
-        moduleNamespace = 'module-' + namespace,
+        moduleNamespace = 'handler-' + namespace,
 
         $module         = $(this),
         $context        = $(settings.context),
@@ -13854,7 +13854,7 @@ $.fn.sidebar = function(parameters) {
         },
 
         instantiate: function() {
-          module.verbose('Storing instance of module', module);
+          module.verbose('Storing instance of handler', module);
           instance = module;
           $module
             .data(moduleNamespace, module)
@@ -13870,7 +13870,7 @@ $.fn.sidebar = function(parameters) {
         },
 
         destroy: function() {
-          module.verbose('Destroying previous module for', $module);
+          module.verbose('Destroying previous handler for', $module);
           module.remove.direction();
           $module
             .off(eventNamespace)
@@ -14814,7 +14814,7 @@ $.fn.sticky = function(parameters) {
         error                 = settings.error,
 
         eventNamespace        = '.' + namespace,
-        moduleNamespace       = 'module-' + namespace,
+        moduleNamespace       = 'handler-' + namespace,
 
         $module               = $(this),
         $window               = $(window),
@@ -14855,7 +14855,7 @@ $.fn.sticky = function(parameters) {
         },
 
         instantiate: function() {
-          module.verbose('Storing instance of module', module);
+          module.verbose('Storing instance of handler', module);
           instance = module;
           $module
             .data(moduleNamespace, module)
@@ -15127,7 +15127,7 @@ $.fn.sticky = function(parameters) {
             ;
             if(tagName === 'HTML' || tagName == 'body') {
               // this can trigger for too many reasons
-              //module.error(error.container, tagName, $module);
+              //handler.error(error.container, tagName, $handler);
               module.determineContainer();
             }
             else {
@@ -15704,7 +15704,7 @@ $.fn.tab = function(parameters) {
         error           = settings.error,
 
         eventNamespace  = '.' + settings.namespace,
-        moduleNamespace = 'module-' + settings.namespace,
+        moduleNamespace = 'handler-' + settings.namespace,
 
         $module         = $(this),
         $context,
@@ -15747,7 +15747,7 @@ $.fn.tab = function(parameters) {
         },
 
         instantiate: function () {
-          module.verbose('Storing instance of module', module);
+          module.verbose('Storing instance of handler', module);
           instance = module;
           $module
             .data(moduleNamespace, module)
@@ -16522,7 +16522,7 @@ $.fn.tab.settings = {
   },
 
   error: {
-    api        : 'You attempted to load content without API module',
+    api        : 'You attempted to load content without API handler',
     method     : 'The method you called is not defined',
     missingTab : 'Activated tab cannot be found. Tabs are case-sensitive.',
     noContent  : 'The tab you specified is missing a content url.',
@@ -16624,7 +16624,7 @@ $.fn.transition = function() {
 
           // define namespace
           eventNamespace  = '.' + settings.namespace;
-          moduleNamespace = 'module-' + settings.namespace;
+          moduleNamespace = 'handler-' + settings.namespace;
           instance        = $module.data(moduleNamespace) || module;
 
           // get vendor specific events
@@ -16648,7 +16648,7 @@ $.fn.transition = function() {
         },
 
         instantiate: function() {
-          module.verbose('Storing instance of module', module);
+          module.verbose('Storing instance of handler', module);
           instance = module;
           $module
             .data(moduleNamespace, instance)
@@ -16656,7 +16656,7 @@ $.fn.transition = function() {
         },
 
         destroy: function() {
-          module.verbose('Destroying previous module for', element);
+          module.verbose('Destroying previous handler for', element);
           $module
             .removeData(moduleNamespace)
           ;
@@ -17321,7 +17321,7 @@ $.fn.transition = function() {
           settings.onHide.call(this);
           settings.onComplete.call(this);
           module.force.hidden();
-          // module.repaint();
+          // handler.repaint();
         },
 
         show: function(display) {
@@ -17331,7 +17331,7 @@ $.fn.transition = function() {
           settings.onShow.call(this);
           settings.onComplete.call(this);
           module.force.visible();
-          // module.repaint();
+          // handler.repaint();
         },
 
         toggle: function() {
@@ -17547,7 +17547,7 @@ $.fn.transition.exists = {};
 
 $.fn.transition.settings = {
 
-  // module info
+  // handler info
   name          : 'Transition',
 
   // debug content outputted to console
@@ -17671,7 +17671,7 @@ $.api = $.fn.api = function(parameters) {
 
         // define namespaces for modules
         eventNamespace  = '.' + namespace,
-        moduleNamespace = 'module-' + namespace,
+        moduleNamespace = 'handler-' + namespace,
 
         // element that creates request
         $module         = $(this),
@@ -17689,7 +17689,7 @@ $.api = $.fn.api = function(parameters) {
         data,
         requestStartTime,
 
-        // standard module
+        // standard handler
         element         = this,
         context         = $context[0],
         instance        = $module.data(moduleNamespace),
@@ -17706,7 +17706,7 @@ $.api = $.fn.api = function(parameters) {
         },
 
         instantiate: function() {
-          module.verbose('Storing instance of module', module);
+          module.verbose('Storing instance of handler', module);
           instance = module;
           $module
             .data(moduleNamespace, instance)
@@ -17714,7 +17714,7 @@ $.api = $.fn.api = function(parameters) {
         },
 
         destroy: function() {
-          module.verbose('Destroying previous module for', element);
+          module.verbose('Destroying previous handler for', element);
           $module
             .removeData(moduleNamespace)
             .off(eventNamespace)
@@ -18746,7 +18746,7 @@ $.fn.state = function(parameters) {
         text            = settings.text,
 
         eventNamespace  = '.' + namespace,
-        moduleNamespace = namespace + '-module',
+        moduleNamespace = namespace + '-handler',
 
         $module         = $(this),
 
@@ -18758,9 +18758,9 @@ $.fn.state = function(parameters) {
       module = {
 
         initialize: function() {
-          module.verbose('Initializing module');
+          module.verbose('Initializing handler');
 
-          // allow module to guess desired state based on element
+          // allow handler to guess desired state based on element
           if(settings.automatic) {
             module.add.defaults();
           }
@@ -18784,7 +18784,7 @@ $.fn.state = function(parameters) {
         },
 
         instantiate: function() {
-          module.verbose('Storing instance of module', module);
+          module.verbose('Storing instance of handler', module);
           instance = module;
           $module
             .data(moduleNamespace, module)
@@ -18792,7 +18792,7 @@ $.fn.state = function(parameters) {
         },
 
         destroy: function() {
-          module.verbose('Destroying previous module', instance);
+          module.verbose('Destroying previous handler', instance);
           $module
             .off(eventNamespace)
             .removeData(moduleNamespace)
@@ -19284,7 +19284,7 @@ $.fn.state = function(parameters) {
 
 $.fn.state.settings = {
 
-  // module info
+  // handler info
   name           : 'State',
 
   // debug output
@@ -19438,7 +19438,7 @@ $.fn.visibility = function(parameters) {
         metadata        = settings.metadata,
 
         eventNamespace  = '.' + namespace,
-        moduleNamespace = 'module-' + namespace,
+        moduleNamespace = 'handler-' + namespace,
 
         $window         = $(window),
 
@@ -19505,7 +19505,7 @@ $.fn.visibility = function(parameters) {
         },
 
         destroy: function() {
-          module.verbose('Destroying previous module');
+          module.verbose('Destroying previous handler');
           if(observer) {
             observer.disconnect();
           }

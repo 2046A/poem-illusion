@@ -40,7 +40,7 @@ $.fn.rating = function(parameters) {
         error           = settings.error,
 
         eventNamespace  = '.' + namespace,
-        moduleNamespace = 'module-' + namespace,
+        moduleNamespace = 'handler-' + namespace,
 
         element         = this,
         instance        = $(this).data(moduleNamespace),
@@ -54,7 +54,7 @@ $.fn.rating = function(parameters) {
       module = {
 
         initialize: function() {
-          module.verbose('Initializing rating module', settings);
+          module.verbose('Initializing rating handler', settings);
 
           if($icon.length === 0) {
             module.setup.layout();
@@ -71,7 +71,7 @@ $.fn.rating = function(parameters) {
         },
 
         instantiate: function() {
-          module.verbose('Instantiating module', settings);
+          module.verbose('Instantiating handler', settings);
           instance = module;
           $module
             .data(moduleNamespace, module)

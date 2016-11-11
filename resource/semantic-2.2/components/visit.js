@@ -39,7 +39,7 @@ $.visit = $.fn.visit = function(parameters) {
         namespace       = settings.namespace,
 
         eventNamespace  = '.' + namespace,
-        moduleNamespace = namespace + '-module',
+        moduleNamespace = namespace + '-handler',
 
         $module         = $(this),
         $displays       = $(),
@@ -65,7 +65,7 @@ $.visit = $.fn.visit = function(parameters) {
         },
 
         instantiate: function() {
-          module.verbose('Storing instance of visit module', module);
+          module.verbose('Storing instance of visit handler', module);
           instance = module;
           $module
             .data(moduleNamespace, module)

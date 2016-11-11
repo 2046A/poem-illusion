@@ -1,4 +1,4 @@
-{% extends 'layout/index.html' %}
+{% extends "../layout.index.html" %}
 {% block title %}
     登录
 {% endblock %}
@@ -24,26 +24,25 @@
                 <!--<div class="ui teal labeled icon button">Create New Order <i class="add icon"></i> </div>-->
                 <!--<button class="ui basic button"><i class="icon user"></i> Add Friend </button>-->
                 <div style="margin-left: 35%;">
-                    <form class="form-horizontal chinese" style="width: 50%;" method='post' action="/login/validate">
+                    <form class="form-horizontal chinese" style="width: 50%;">
                         <div class="form-group">
                             <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
                             <div class="input-group">
                                 <div class="input-group-addon"><i class="icon user"></i></div>
-                                <input type="text" class="form-control" name="email" placeholder="登录邮箱">
+                                <input type="text" class="form-control" id="exampleInputAmount" placeholder="用户名">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
                             <div class="input-group">
                                 <div class="input-group-addon"><i class="icon lock"></i></div>
-                                <input type="password" class="form-control" name="password" placeholder="密码">
+                                <input type="text" class="form-control" id="exampleInputAmount" placeholder="密码">
                             </div>
                         </div>
                     </form>
                 </div>
-                <button style="margin-left: 3%; width: 36%;" class="ui primary button" onclick="user_login()">登录</button><br/>
+                <button style="margin-left: 3%; width: 36%;" class="ui primary button">登录</button><br/>
                 <span class="chinese" style="float: left;margin-left: 34%;"><h6>忘记密码</h6></span>
-                <span class="chinese" style="float: left;margin-left: 5%;margin-top: 10px;display:{% if login_error %} block{% else %} none{% endif %};color: red"><h5>用户名或者密码错误</h5></span>
                 <div class="ui horizontal divider chinese" style="margin-top: 50px;margin-bottom: 25px;width: 50%;margin-left: 26%;">或者</div>
                 <button class="ui circular wechat icon button">
                     <i class="wechat icon"></i>
@@ -60,9 +59,4 @@
             </div>
         </div>
     </div>
-{% endblock %}
-{% block javascript %}
-    function user_login(){
-    $("form").submit();
-    }
 {% endblock %}

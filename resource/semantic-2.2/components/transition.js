@@ -70,7 +70,7 @@ $.fn.transition = function() {
 
           // define namespace
           eventNamespace  = '.' + settings.namespace;
-          moduleNamespace = 'module-' + settings.namespace;
+          moduleNamespace = 'handler-' + settings.namespace;
           instance        = $module.data(moduleNamespace) || module;
 
           // get vendor specific events
@@ -94,7 +94,7 @@ $.fn.transition = function() {
         },
 
         instantiate: function() {
-          module.verbose('Storing instance of module', module);
+          module.verbose('Storing instance of handler', module);
           instance = module;
           $module
             .data(moduleNamespace, instance)
@@ -102,7 +102,7 @@ $.fn.transition = function() {
         },
 
         destroy: function() {
-          module.verbose('Destroying previous module for', element);
+          module.verbose('Destroying previous handler for', element);
           $module
             .removeData(moduleNamespace)
           ;
@@ -767,7 +767,7 @@ $.fn.transition = function() {
           settings.onHide.call(this);
           settings.onComplete.call(this);
           module.force.hidden();
-          // module.repaint();
+          // handler.repaint();
         },
 
         show: function(display) {
@@ -777,7 +777,7 @@ $.fn.transition = function() {
           settings.onShow.call(this);
           settings.onComplete.call(this);
           module.force.visible();
-          // module.repaint();
+          // handler.repaint();
         },
 
         toggle: function() {
@@ -993,7 +993,7 @@ $.fn.transition.exists = {};
 
 $.fn.transition.settings = {
 
-  // module info
+  // handler info
   name          : 'Transition',
 
   // debug content outputted to console

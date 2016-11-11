@@ -1,18 +1,18 @@
 /*
  * module
- * author: 
+ * author:
  */
-package module
+package handler
 
 import "illusion"
 
-func indexSetting(it *illusion.Context){
+func settingIndex(it *illusion.Context) {
 	it.View("setting/setting.html", illusion.TemplateContext{})
 }
 
-func Setting()*illusion.Blueprint{
+func Setting() *illusion.Blueprint {
 	setting := illusion.BluePrint("/setting", "_setting_")
-	setting.Get("/", indexSetting)
+	setting.Get("/", settingIndex)
 
 	return setting
 }

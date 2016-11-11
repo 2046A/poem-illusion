@@ -27,7 +27,7 @@ $.site = $.fn.site = function(parameters) {
     error           = settings.error,
 
     eventNamespace  = '.' + namespace,
-    moduleNamespace = 'module-' + namespace,
+    moduleNamespace = 'handler-' + namespace,
 
     $document       = $(document),
     $module         = $document,
@@ -149,7 +149,7 @@ $.site = $.fn.site = function(parameters) {
             module.verbose('Changing default setting', setting, value, name);
             $.fn[name].settings[setting] = value;
             if(modifyExisting && namespace) {
-              $existingModules = $(':data(module-' + namespace + ')');
+              $existingModules = $(':data(handler-' + namespace + ')');
               if($existingModules.length > 0) {
                 module.verbose('Modifying existing settings', $existingModules);
                 $existingModules[name]('setting', setting, value);
@@ -175,7 +175,7 @@ $.site = $.fn.site = function(parameters) {
             module.verbose('Changing default setting', newSettings, name);
             $.extend(true, $.fn[name].settings, newSettings);
             if(modifyExisting && namespace) {
-              $existingModules = $(':data(module-' + namespace + ')');
+              $existingModules = $(':data(handler-' + namespace + ')');
               if($existingModules.length > 0) {
                 module.verbose('Modifying existing settings', $existingModules);
                 $existingModules[name]('setting', newSettings);
@@ -428,7 +428,7 @@ $.site.settings = {
   namespace   : 'site',
 
   error : {
-    console : 'Console cannot be restored, most likely it was overwritten outside of module',
+    console : 'Console cannot be restored, most likely it was overwritten outside of handler',
     method : 'The method you called is not defined.'
   },
 
